@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita & Informasi | SMP Muhammadiyah Bojong Nangka Tangerang</title>
+    <link rel="shortcut icon" href="SMP Bonang.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .bg-muhammadiyah { background-color: #006837; } /* Hijau Khas Muhammadiyah */
+        .text-muhammadiyah { color: #006837; }
+        
+        /* Dropdown Desktop */
+        .dropdown:hover .dropdown-menu { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* News Card Styling */
+        .news-card { transition: all 0.3s ease; }
+        .news-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .news-card img { transition: transform 0.5s ease; }
+        .news-card:hover img { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Top Bar (Persis Index.html) -->
+    <div class="bg-yellow-500 text-white text-sm py-2 px-4 hidden md:block">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <i class="fas fa-clock mr-2"></i> Buka Senin - Jumat, 07.00 - 15.00 WIB
+            </div>
+            <div>
+                <i class="fas fa-phone mr-2"></i> (021) 54203469
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation (Persis Index.html dengan penambahan Dropdown Berita) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="SMP Bonang.png" alt="Logo" class="h-12">
+                <div>
+                    <h1 class="font-bold text-lg leading-tight text-muhammadiyah uppercase">SMP Muhammadiyah</h1>
+                    <p class="text-xs font-semibold">Bojong Nangka Tangerang</p>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex space-x-6 font-medium items-center">
+                <a href="index.html" class="hover:text-muhammadiyah">Beranda</a>
+              <!-- Dropdown Profil -->
+                <div class="relative dropdown">
+                    <button class="flex items-center hover:text-muhammadiyah transition focus:outline-none">
+                        Profil <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="dropdown-menu absolute left-0 mt-0 w-48 bg-white shadow-xl rounded-b-lg border-t-4 border-muhammadiyah hidden">
+                        <a href="#profil" class="block px-4 py-3 text-sm hover:bg-gray-100 transition">Sejarah Singkat</a>
+                        <a href="#" class="block px-4 py-3 text-sm hover:bg-gray-100 transition">Visi & Misi</a>
+                        <a href="#" class="block px-4 py-3 text-sm hover:bg-gray-100 transition">Sara Prasarana</a>
+                        <a href="#" class="block px-4 py-3 text-sm hover:bg-gray-100 transition">IPM</a>
+                    </div>
+                </div>
+                
+                <!-- Menu Berita Dropdown (Aktif) -->
+                <div class="relative dropdown">
+                    <button class="flex items-center text-muhammadiyah font-bold focus:outline-none">
+                        Berita <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </button>
+                    <div class="dropdown-menu absolute left-0 mt-0 w-48 bg-white shadow-xl rounded-b-lg border-t-4 border-muhammadiyah hidden z-50">
+                        <a href="#" class="block px-4 py-3 text-sm hover:bg-gray-100 transition">Kegiatan Sekolah</a>
+                        <a href="#" class="block px-4 py-3 text-sm hover:bg-gray-100 transition">Prestasi Siswa</a>
+                        <a href="#" class="block px-4 py-3 text-sm hover:bg-gray-100 transition">Artikel Islami</a>
+                        <a href="#" class="block px-4 py-3 text-sm hover:bg-gray-100 transition">Pengumuman</a>
+                    </div>
+                </div>
+
+                <a href="ekstrakurikuler.html" class="hover:text-muhammadiyah">Ekstrakurikuler</a>
+                <a href="gallery.html" class="hover:text-muhammadiyah">Gallery</a>
+                <a href="index.html#kontak" class="hover:text-muhammadiyah">Kontak</a>
+                <a href="index.html#ppdb" class="bg-red-600 text-white px-5 py-2 rounded-full font-bold hover:bg-red-700 transition">SPMB</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-btn" class="md:hidden text-2xl text-muhammadiyah">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-6 space-y-4">
+            <a href="index.html" class="block font-medium">Beranda</a>
+            <a href="#" class="block font-medium text-muhammadiyah">Berita</a>
+            <a href="gallery.html" class="block font-medium">Gallery</a>
+            <a href="index.html#ppdb" class="block bg-red-600 text-white text-center py-2 rounded-lg">SPMB</a>
+        </div>
+    </nav>
+
+    <!-- Header Halaman -->
+    <div class="bg-muhammadiyah py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider">Kabar & Informasi Sekolah</h2>
+            <div class="flex justify-center items-center text-white/70 text-sm mt-4">
+                <a href="index.html" class="hover:text-yellow-400 transition">Beranda</a>
+                <span class="mx-2">/</span>
+                <span class="text-yellow-400">Berita</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content (News + Sidebar gaya Al-Mujahidin) -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="flex flex-wrap -mx-4">
+            
+            <!-- Daftar Berita (Kolom Kiri) -->
+            <div class="w-full lg:w-8/12 px-4 mb-12">
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <!-- Item Berita 1 -->
+                    <article class="news-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
+                        <div class="relative overflow-hidden h-52">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Berita" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-muhammadiyah text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Kegiatan</div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <div class="flex items-center text-gray-400 text-xs mb-3 space-x-4 font-semibold">
+                                <span><i class="far fa-calendar-alt mr-1"></i> 11 Januari 2026</span>
+                                <span><i class="far fa-user mr-1"></i> Admin</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-3 hover:text-muhammadiyah transition leading-tight">
+                                Semarak Baitul Arqam: Mengukuhkan Karakter Islami Siswa Kelas IX
+                            </h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-3">
+                                Seluruh siswa kelas IX SMP Muhammadiyah Bojong Nangka mengikuti kegiatan Baitul Arqam sebagai bekal spiritual...
+                            </p>
+                            <a href="#" class="text-muhammadiyah font-bold text-sm inline-flex items-center group">
+                                Selengkapnya <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Item Berita 2 -->
+                    <article class="news-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
+                        <div class="relative overflow-hidden h-52">
+                            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" alt="Berita" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-yellow-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Prestasi</div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <div class="flex items-center text-gray-400 text-xs mb-3 space-x-4 font-semibold">
+                                <span><i class="far fa-calendar-alt mr-1"></i> 08 Januari 2026</span>
+                                <span><i class="far fa-user mr-1"></i> Humas</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-3 hover:text-muhammadiyah transition leading-tight">
+                                Alhamdulillah, Tim Robotik Meraih Juara 2 di OlympicAD 2026
+                            </h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-3">
+                                Prestasi gemilang kembali ditorehkan oleh tim robotik sekolah dalam ajang bergengsi OlympicAD tingkat wilayah...
+                            </p>
+                            <a href="#" class="text-muhammadiyah font-bold text-sm inline-flex items-center group">
+                                Selengkapnya <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Pagination -->
+                <div class="mt-12 flex justify-center">
+                    <nav class="flex space-x-2">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded bg-muhammadiyah text-white font-bold">1</a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded bg-white border border-gray-200 text-gray-600 hover:bg-muhammadiyah hover:text-white transition font-bold">2</a>
+                        <a href="#" class="px-4 h-10 flex items-center justify-center rounded bg-white border border-gray-200 text-gray-600 hover:bg-muhammadiyah hover:text-white transition font-bold uppercase text-xs tracking-widest">Next</a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Sidebar (Kolom Kanan) -->
+            <aside class="w-full lg:w-4/12 px-4">
+                
+                <!-- Widget: Pencarian -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
+                    <h4 class="font-bold text-gray-800 mb-4 pb-2 border-b-2 border-yellow-500 inline-block">Cari Berita</h4>
+                    <form class="relative">
+                        <input type="text" placeholder="Ketik kata kunci..." class="w-full bg-gray-50 border border-gray-200 rounded-lg py-2 px-4 focus:ring-2 focus:ring-muhammadiyah outline-none text-sm transition">
+                        <button class="absolute right-3 top-2.5 text-gray-400 hover:text-muhammadiyah">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Widget: Berita Terbaru -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
+                    <h4 class="font-bold text-gray-800 mb-6 pb-2 border-b-2 border-yellow-500 inline-block">Berita Terbaru</h4>
+                    <div class="space-y-6">
+                        <div class="flex items-center group cursor-pointer">
+                            <div class="w-16 h-16 rounded overflow-hidden flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=150&q=80" class="w-full h-full object-cover group-hover:scale-110 transition">
+                            </div>
+                            <div class="ml-4">
+                                <a href="#" class="text-xs font-bold text-gray-800 hover:text-muhammadiyah line-clamp-2 leading-snug">Jadwal Ujian Semester Genap Tahun Ajaran 2025/2026</a>
+                                <span class="text-[10px] text-gray-400 italic">05 Januari 2026</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center group cursor-pointer border-t pt-4">
+                            <div class="w-16 h-16 rounded overflow-hidden flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=150&q=80" class="w-full h-full object-cover group-hover:scale-110 transition">
+                            </div>
+                            <div class="ml-4">
+                                <a href="#" class="text-xs font-bold text-gray-800 hover:text-muhammadiyah line-clamp-2 leading-snug">Penerimaan Rapor dan Libur Akhir Semester</a>
+                                <span class="text-[10px] text-gray-400 italic">28 Desember 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Widget: Kategori -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h4 class="font-bold text-gray-800 mb-4 pb-2 border-b-2 border-yellow-500 inline-block">Kategori Berita</h4>
+                    <ul class="text-sm space-y-3">
+                        <li>
+                            <a href="#" class="flex justify-between items-center text-gray-600 hover:text-muhammadiyah transition group">
+                                <span><i class="fas fa-chevron-right text-[10px] mr-2 text-yellow-500"></i> Kegiatan Sekolah</span>
+                                <span class="bg-gray-100 px-2 py-0.5 rounded text-[10px] font-bold text-gray-400 group-hover:bg-muhammadiyah group-hover:text-white transition">12</span>
+                            </a>
+                        </li>
+                        <li class="border-t pt-3">
+                            <a href="#" class="flex justify-between items-center text-gray-600 hover:text-muhammadiyah transition group">
+                                <span><i class="fas fa-chevron-right text-[10px] mr-2 text-yellow-500"></i> Prestasi</span>
+                                <span class="bg-gray-100 px-2 py-0.5 rounded text-[10px] font-bold text-gray-400 group-hover:bg-muhammadiyah group-hover:text-white transition">5</span>
+                            </a>
+                        </li>
+                        <li class="border-t pt-3">
+                            <a href="#" class="flex justify-between items-center text-gray-600 hover:text-muhammadiyah transition group">
+                                <span><i class="fas fa-chevron-right text-[10px] mr-2 text-yellow-500"></i> Pengumuman</span>
+                                <span class="bg-gray-100 px-2 py-0.5 rounded text-[10px] font-bold text-gray-400 group-hover:bg-muhammadiyah group-hover:text-white transition">8</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer (Persis Index.html) -->
+    <footer class="bg-gray-900 text-white py-12 px-4 border-t-8 border-yellow-500">
+        <div class="container mx-auto grid md:grid-cols-4 gap-8">
+            <div class="col-span-2">
+                <h4 class="font-bold text-xl mb-4 text-yellow-500">SMP Muhammadiyah Bojong Nangka</h4>
+                <p class="text-gray-400 text-sm w-3/4">Membentuk generasi Qurani & Berwawasan Global di bawah naungan Persyarikatan Muhammadiyah.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Navigasi</h4>
+                <ul class="text-gray-400 text-sm space-y-2">
+                    <li><a href="index.html#profil" class="hover:text-white">Sejarah</a></li>
+                    <li><a href="ekstrakurikuler.html" class="hover:text-white">Ekstrakurikuler</a></li>
+                    <li><a href="index.html#ppdb" class="hover:text-white">Info PPDB</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Media Sosial</h4>
+                <div class="flex space-x-4 text-xl">
+                    <a href="#" class="hover:text-yellow-500 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-yellow-500 transition"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover:text-yellow-500 transition"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-[10px] uppercase tracking-widest">
+            <p>&copy; 2026 SMP Muhammadiyah Bojong Nangka Tangerang. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script Menu Mobile -->
+    <script>
+        const btn = document.getElementById('mobile-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

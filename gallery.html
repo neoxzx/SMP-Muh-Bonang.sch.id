@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Kegiatan - SMP Muhammadiyah Bojong Nangka</title>
+    <link rel="shortcut icon" href="SMP Bonang.png" type="image/x-icon">
+
+    <!-- Framework & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .bg-muhammadiyah { background-color: #006837; }
+        .text-muhammadiyah { color: #006837; }
+        
+        /* Dropdown Animation */
+        .dropdown:hover .dropdown-menu { display: block; animation: slideUp 0.3s ease; }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Gallery Hover Effects */
+        .gallery-item { position: relative; overflow: hidden; border-radius: 12px; shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .gallery-item img { transition: transform 0.5s ease; width: 100%; height: 300px; object-fit: cover; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(0,104,55,0.9), transparent);
+            display: flex; align-items: flex-end; padding: 20px;
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Top Bar (Persis Index) -->
+    <div class="bg-yellow-500 text-white text-sm py-2 px-4 hidden md:block">
+        <div class="container mx-auto flex justify-between items-center">
+            <div><i class="fas fa-clock mr-2"></i> Buka Senin - Jumat, 07.00 - 15.00 WIB</div>
+            <div><i class="fas fa-phone mr-2"></i> (021) 54203469</div>
+        </div>
+    </div>
+
+    <!-- Navigation (Persis Index dengan Dropdown) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="SMP Bonang.png" alt="Logo" class="h-12">
+                <div>
+                    <h1 class="font-bold text-lg leading-tight text-muhammadiyah uppercase">SMP Muhammadiyah</h1>
+                    <p class="text-xs font-semibold">Bojong Nangka Tangerang</p>
+                </div>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-6 font-medium text-gray-700">
+                <a href="index.html" class="hover:text-muhammadiyah transition">Beranda</a>
+                
+
+                <a href="berita.html" class="block font-medium">Berita</a>
+                <a href="ekstrakurikuler.html" class="block font-medium">Ekstrakurikuler</a>
+                <a href="gallery.html" class="text-muhammadiyah font-bold border-b-2 border-muhammadiyah pb-1">Galeri</a>
+                <a href="index.html#ppdb" class="bg-red-600 text-white px-5 py-2 rounded-full font-bold hover:bg-red-700 transition">SPMB</a>
+            </div>
+
+            <!-- Mobile Button -->
+            <button id="mobile-btn" class="md:hidden text-2xl text-muhammadiyah">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-6 space-y-4">
+            <a href="index.html" class="block font-medium">Beranda</a>
+            <a href="berita.html" class="block font-medium">Berita</a>
+            <a href="gallery.html" class="block font-bold text-muhammadiyah">Galeri</a>
+            <a href="index.html#ppdb" class="block bg-red-600 text-white text-center py-2 rounded-lg">SPMB</a>
+        </div>
+    </nav>
+
+    <!-- Header Galeri -->
+    <header class="bg-muhammadiyah py-16 px-4 text-center text-white">
+        <div class="container mx-auto">
+            <h1 class="text-4xl font-bold mb-2">Galeri Kegiatan</h1>
+            <p class="opacity-80 max-w-2xl mx-auto">Dokumentasi momen berharga, aktivitas belajar mengajar, dan prestasi siswa SMP Muhammadiyah Bojong Nangka Tangerang.</p>
+        </div>
+    </header>
+
+    <!-- Main Gallery Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Item Galeri 1 -->
+            <div class="gallery-item shadow-md">
+                <img src="https://images.unsplash.com/photo-1577891776193-47000e95690b?auto=format&fit=crop&w=800&q=80" alt="Upacara">
+                <div class="gallery-overlay">
+                    <span class="text-white font-bold text-lg"><i class="fas fa-flag mr-2"></i> Upacara Bendera Senin</span>
+                </div>
+            </div>
+
+            <!-- Item Galeri 2 -->
+            <div class="gallery-item shadow-md">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Lab">
+                <div class="gallery-overlay">
+                    <span class="text-white font-bold text-lg"><i class="fas fa-laptop mr-2"></i> Praktikum Lab Komputer</span>
+                </div>
+            </div>
+
+            <!-- Item Galeri 3 -->
+            <div class="gallery-item shadow-md">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Tapak Suci">
+                <div class="gallery-overlay">
+                    <span class="text-white font-bold text-lg"><i class="fas fa-fist-raised mr-2"></i> Latihan Tapak Suci</span>
+                </div>
+            </div>
+
+            <!-- Item Galeri 4 -->
+            <div class="gallery-item shadow-md">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80" alt="Wisuda">
+                <div class="gallery-overlay">
+                    <span class="text-white font-bold text-lg"><i class="fas fa-graduation-cap mr-2"></i> Pelepasan Siswa Kelas IX</span>
+                </div>
+            </div>
+
+            <!-- Item Galeri 5 -->
+            <div class="gallery-item shadow-md">
+                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80" alt="Perpus">
+                <div class="gallery-overlay">
+                    <span class="text-white font-bold text-lg"><i class="fas fa-book mr-2"></i> Budaya Literasi Perpustakaan</span>
+                </div>
+            </div>
+
+            <!-- Item Galeri 6 -->
+            <div class="gallery-item shadow-md">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80" alt="Kajian">
+                <div class="gallery-overlay">
+                    <span class="text-white font-bold text-lg"><i class="fas fa-quran mr-2"></i> Pembinaan Karakter IPM</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Tombol Muat Lebih Banyak -->
+        <div class="text-center mt-12">
+            <button class="bg-white border-2 border-muhammadiyah text-muhammadiyah px-8 py-3 rounded-full font-bold hover:bg-muhammadiyah hover:text-white transition shadow-sm">
+                Lihat Foto Lainnya
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 px-4 border-t-8 border-yellow-500">
+        <div class="container mx-auto text-center">
+            <h4 class="text-white font-bold text-xl mb-4">SMP Muhammadiyah Bojong Nangka</h4>
+            <p class="text-sm mb-6">Membentuk Generasi Qurani & Berwawasan Global</p>
+            <div class="flex justify-center space-x-6 text-xl mb-8">
+                <a href="#" class="hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="text-[10px] uppercase tracking-widest">&copy; 2026 SMP Muhammadiyah Bojong Nangka Tangerang. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script Menu Mobile -->
+    <script>
+        const btn = document.getElementById('mobile-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

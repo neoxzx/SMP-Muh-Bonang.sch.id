@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekstrakurikuler - SMP Muhammadiyah Bojong Nangka</title>
+    <link rel="shortcut icon" href="SMP Bonang.png" type="image/x-icon">
+    
+    <!-- Framework & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .bg-muhammadiyah { background-color: #006837; }
+        .text-muhammadiyah { color: #006837; }
+        
+        /* Dropdown Animation */
+        .dropdown:hover .dropdown-menu { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Card Hover */
+        .ekscul-card { transition: all 0.3s ease; display: flex; flex-direction: column; height: 100%; }
+        .ekscul-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+
+        /* Modal Overlay */
+        #modal-overlay { transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- TOP BAR -->
+    <div class="bg-yellow-500 text-white text-sm py-2 px-4 hidden md:block">
+        <div class="container mx-auto flex justify-between items-center">
+            <div><i class="fas fa-clock mr-2"></i> Buka Senin - Jumat, 07.00 - 15.00 WIB</div>
+            <div><i class="fas fa-phone mr-2"></i> (021) 54203469</div>
+        </div>
+    </div>
+
+    <!-- NAVBAR (Identik dengan Index.html) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="SMP Bonang.png" alt="Logo" class="h-12">
+                <div>
+                    <h1 class="font-bold text-lg leading-tight text-muhammadiyah uppercase">SMP Muhammadiyah</h1>
+                    <p class="text-xs font-semibold">Bojong Nangka Tangerang</p>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-6 font-medium text-gray-700">
+                <a href="index.html" class="hover:text-muhammadiyah transition">Beranda</a>
+                <a href="berita.html" class="hover:text-muhammadiyah transition">Berita</a>
+                <a href="ekstrakurikuler.html" class="text-muhammadiyah font-bold border-b-2 border-muhammadiyah pb-1">Ekstrakurikuler</a>
+                <a href="gallery.html" class="hover:text-muhammadiyah transition">Gallery</a>
+                <a href="index.html#ppdb" class="bg-red-600 text-white px-5 py-2 rounded-full font-bold hover:bg-red-700 transition shadow-md">PPDB</a>
+            </div>
+
+            <button id="mobile-btn" class="md:hidden text-2xl text-muhammadiyah"><i class="fas fa-bars"></i></button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-6 space-y-4">
+            <a href="index.html" class="block font-medium">Beranda</a>
+            <a href="ekstrakurikuler.html" class="block font-bold text-muhammadiyah">Ekstrakurikuler</a>
+            <a href="index.html#ppdb" class="block bg-red-600 text-white text-center py-2 rounded-lg font-bold">Daftar PPDB</a>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <header class="bg-muhammadiyah py-16 px-4 text-center text-white">
+        <div class="container mx-auto">
+            <h1 class="text-4xl font-bold mb-2">Ekstrakurikuler</h1>
+            <p class="opacity-80 max-w-2xl mx-auto italic">"Wadah Pengembangan Bakat, Minat, dan Karakter Siswa"</p>
+        </div>
+    </header>
+
+    <!-- GRID EKSTRAKURIKULER -->
+    <main class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Hizbul Wathan -->
+            <div class="ekscul-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <div class="w-16 h-16 bg-green-100 text-green-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-6"><i class="fas fa-campground"></i></div>
+                <h3 class="font-bold text-xl mb-3 text-gray-800">Hizbul Wathan</h3>
+                <p class="text-sm text-gray-500 mb-6 flex-grow">Kepanduan Muhammadiyah untuk melatih kemandirian dan kepemimpinan.</p>
+                <button onclick="openModal('hw')" class="bg-muhammadiyah text-white py-2 px-6 rounded-lg font-bold text-sm hover:bg-green-800 transition">Baca Selengkapnya</button>
+            </div>
+
+            <!-- Tapak Suci -->
+            <div class="ekscul-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <div class="w-16 h-16 bg-red-100 text-red-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-6"><i class="fas fa-fist-raised"></i></div>
+                <h3 class="font-bold text-xl mb-3 text-gray-800">Tapak Suci</h3>
+                <p class="text-sm text-gray-500 mb-6 flex-grow">Seni bela diri Indonesia berlandaskan iman dan akhlak islami.</p>
+                <button onclick="openModal('ts')" class="bg-muhammadiyah text-white py-2 px-6 rounded-lg font-bold text-sm hover:bg-green-800 transition">Baca Selengkapnya</button>
+            </div>
+
+            <!-- Futsal -->
+            <div class="ekscul-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <div class="w-16 h-16 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-6"><i class="fas fa-futbol"></i></div>
+                <h3 class="font-bold text-xl mb-3 text-gray-800">Futsal</h3>
+                <p class="text-sm text-gray-500 mb-6 flex-grow">Mengembangkan fisik, sportivitas, dan kerjasama tim melalui olahraga.</p>
+                <button onclick="openModal('futsal')" class="bg-muhammadiyah text-white py-2 px-6 rounded-lg font-bold text-sm hover:bg-green-800 transition">Baca Selengkapnya</button>
+            </div>
+
+            <!-- BTQ -->
+            <div class="ekscul-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <div class="w-16 h-16 bg-yellow-100 text-yellow-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-6"><i class="fas fa-book-quran"></i></div>
+                <h3 class="font-bold text-xl mb-3 text-gray-800">BTQ</h3>
+                <p class="text-sm text-gray-500 mb-6 flex-grow">Bimbingan Baca Tulis Al-Qur'an agar fasih dan cinta Al-Qur'an.</p>
+                <button onclick="openModal('btq')" class="bg-muhammadiyah text-white py-2 px-6 rounded-lg font-bold text-sm hover:bg-green-800 transition">Baca Selengkapnya</button>
+            </div>
+
+            <!-- IT Club -->
+            <div class="ekscul-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <div class="w-16 h-16 bg-gray-200 text-gray-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-6"><i class="fas fa-laptop-code"></i></div>
+                <h3 class="font-bold text-xl mb-3 text-gray-800">IT Club</h3>
+                <p class="text-sm text-gray-500 mb-6 flex-grow">Eksplorasi dunia digital, desain grafis, dan dasar pemrograman komputer.</p>
+                <button onclick="openModal('it')" class="bg-muhammadiyah text-white py-2 px-6 rounded-lg font-bold text-sm hover:bg-green-800 transition">Baca Selengkapnya</button>
+            </div>
+
+            <!-- Math Club -->
+            <div class="ekscul-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <div class="w-16 h-16 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-6"><i class="fas fa-calculator"></i></div>
+                <h3 class="font-bold text-xl mb-3 text-gray-800">Math Club</h3>
+                <p class="text-sm text-gray-500 mb-6 flex-grow">Asah logika dan kemampuan berhitung untuk persiapan olimpiade matematika.</p>
+                <button onclick="openModal('math')" class="bg-muhammadiyah text-white py-2 px-6 rounded-lg font-bold text-sm hover:bg-green-800 transition">Baca Selengkapnya</button>
+            </div>
+
+            <!-- English Club -->
+            <div class="ekscul-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <div class="w-16 h-16 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-6"><i class="fas fa-language"></i></div>
+                <h3 class="font-bold text-xl mb-3 text-gray-800">English Club</h3>
+                <p class="text-sm text-gray-500 mb-6 flex-grow">Latihan speaking dan komunikasi global secara menyenangkan dan aktif.</p>
+                <button onclick="openModal('english')" class="bg-muhammadiyah text-white py-2 px-6 rounded-lg font-bold text-sm hover:bg-green-800 transition">Baca Selengkapnya</button>
+            </div>
+
+            <!-- Paskibra -->
+            <div class="ekscul-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <div class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-6"><i class="fas fa-flag"></i></div>
+                <h3 class="font-bold text-xl mb-3 text-gray-800">Paskibra</h3>
+                <p class="text-sm text-gray-500 mb-6 flex-grow">Membentuk karakter disiplin tinggi, patriotisme, dan ketangkasan baris-berbaris.</p>
+                <button onclick="openModal('paskibra')" class="bg-muhammadiyah text-white py-2 px-6 rounded-lg font-bold text-sm hover:bg-green-800 transition">Baca Selengkapnya</button>
+            </div>
+
+            <!-- Keputrian -->
+            <div class="ekscul-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <div class="w-16 h-16 bg-pink-100 text-pink-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-6"><i class="fas fa-venus"></i></div>
+                <h3 class="font-bold text-xl mb-3 text-gray-800">Keputrian</h3>
+                <p class="text-sm text-gray-500 mb-6 flex-grow">Pelatihan keterampilan dan kajian khusus adab kewanitaan bagi siswi.</p>
+                <button onclick="openModal('keputrian')" class="bg-muhammadiyah text-white py-2 px-6 rounded-lg font-bold text-sm hover:bg-green-800 transition">Baca Selengkapnya</button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- MODAL COMPONENT -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black/60 z-[100] hidden items-center justify-center p-4">
+        <div class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl">
+            <div class="h-32 bg-muhammadiyah flex items-center justify-center text-white text-5xl relative">
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-white/50 hover:text-white transition"><i class="fas fa-times text-2xl"></i></button>
+                <div id="modal-icon"></div>
+            </div>
+            <div class="p-8">
+                <h2 id="modal-title" class="text-3xl font-bold text-muhammadiyah mb-4"></h2>
+                <div id="modal-desc" class="text-gray-600 leading-relaxed text-sm space-y-3"></div>
+                <div class="mt-8 pt-6 border-t flex justify-end">
+                    <button onclick="closeModal()" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-2 rounded-xl font-bold transition">Tutup Detail</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 py-12 px-4 border-t-8 border-yellow-500 text-center">
+        <div class="container mx-auto">
+            <h4 class="text-white font-bold text-xl mb-4 uppercase tracking-widest">SMP Muhammadiyah Bojong Nangka</h4>
+            <p class="text-xs mb-8">&copy; 2026 SMP Muhammadiyah Bojong Nangka Tangerang. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DATA & LOGIC -->
+    <script>
+        const data = {
+            hw: {
+                title: 'Gerakan Kepanduan Hizbul Wathan',
+                icon: '<i class="fas fa-campground"></i>',
+                desc: '<p>Hizbul Wathan (HW) adalah ekstrakurikuler wajib yang melatih kemandirian, kedisiplinan, dan cinta tanah air. HW membina fisik dan mental siswa melalui kegiatan luar ruangan yang seru.</p><strong>Kegiatan:</strong> Perkemahan (Camping), Semaphore, Tali Temali, PBB, dan Tadabbur Alam.'
+            },
+            ts: {
+                title: 'Tapak Suci Putera Muhammadiyah',
+                icon: '<i class="fas fa-fist-raised"></i>',
+                desc: '<p>Seni bela diri asli Indonesia yang menekankan pada kekuatan iman dan fisik. Tapak Suci melatih siswa untuk membela diri dengan akhlak yang mulia.</p><strong>Motto:</strong> Dengan Iman dan Akhlak saya menjadi kuat, tanpa Iman dan Akhlak saya menjadi lemah.'
+            },
+            futsal: {
+                title: 'Futsal & Olahraga',
+                icon: '<i class="fas fa-futbol"></i>',
+                desc: '<p>Wadah bagi siswa yang hobi mengolah si kulit bundar. Futsal melatih koordinasi motorik, strategi tim, dan membangun semangat sportivitas antar siswa.</p><strong>Latihan:</strong> Teknik dasar (passing, shooting, dribbling), strategi pertandingan, dan sparing antar kelas.'
+            },
+            btq: {
+                title: 'Baca Tulis Al-Qur\'an (BTQ)',
+                icon: '<i class="fas fa-book-quran"></i>',
+                desc: '<p>Program unggulan untuk memastikan setiap siswa lulus dengan kemampuan membaca Quran yang tartil sesuai Tajwid. Program ini meliputi tahsin (perbaikan bacaan) dan tahfidz (hafalan).</p><strong>Target:</strong> Lancar membaca Quran, hafal juz 30, dan menguasai dasar-dasar ilmu tajwid.'
+            },
+            it: {
+                title: 'IT Club & Desain Grafis',
+                icon: '<i class="fas fa-laptop-code"></i>',
+                desc: '<p>Membekali siswa dengan keahlian teknologi masa depan. Siswa akan diajarkan cara menggunakan komputer secara produktif dan kreatif.</p><strong>Materi:</strong> Desain Grafis (Canva/Photoshop), Dasar Pemrograman Web, dan Office Tools untuk menunjang tugas sekolah.'
+            },
+            math: {
+                title: 'Mathematics Club',
+                icon: '<i class="fas fa-calculator"></i>',
+                desc: '<p>Menghilangkan stigma bahwa matematika itu sulit. Di sini, siswa belajar trik cepat berhitung dan mendalami konsep logika untuk persiapan lomba/olimpiade.</p><strong>Fokus:</strong> Pemecahan masalah (Problem Solving), Logika Matematika, dan Persiapan KSN (Kompetisi Sains Nasional).'
+            },
+            english: {
+                title: 'English Speaking Club',
+                icon: '<i class="fas fa-language"></i>',
+                desc: '<p>Meningkatkan rasa percaya diri siswa dalam berkomunikasi menggunakan Bahasa Inggris. Fokus utama adalah praktik berbicara sehari-hari (daily conversation).</p><strong>Kegiatan:</strong> Storytelling, Debat santai, Speech (Pidato), dan Watching English Movie bersama.'
+            },
+            paskibra: {
+                title: 'Paskibra (Pasukan Pengibar Bendera)',
+                icon: '<i class="fas fa-flag"></i>',
+                desc: '<p>Ekstrakurikuler yang fokus pada kedisiplinan tinggi dan kerapihan. Melatih siswa menjadi petugas upacara yang handal dan memiliki jiwa nasionalisme tinggi.</p><strong>Materi:</strong> Peraturan Baris Berbaris (PBB), Tata Upacara Bendera (TUB), dan Pembentukan Postur serta Kedisiplinan.'
+            },
+            keputrian: {
+                title: 'Kajian & Keterampilan Keputrian',
+                icon: '<i class="fas fa-venus"></i>',
+                desc: '<p>Ruang khusus bagi para siswi untuk belajar keterampilan kewanitaan dan memperdalam adab islami dalam kehidupan sehari-hari.</p><strong>Kegiatan:</strong> Cooking Class (Memasak), Tata Boga, Menjahit/Sulam, serta Kajian Fiqih Wanita dan Adab Berpakaian.'
+            }
+        };
+
+        const modal = document.getElementById('modal-overlay');
+        function openModal(key) {
+            document.getElementById('modal-title').innerText = data[key].title;
+            document.getElementById('modal-icon').innerHTML = data[key].icon;
+            document.getElementById('modal-desc').innerHTML = data[key].desc;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+        document.getElementById('mobile-btn').onclick = () => document.getElementById('mobile-menu').classList.toggle('hidden');
+        window.onclick = (e) => { if(e.target == modal) closeModal(); }
+    </script>
+</body>
+</html>

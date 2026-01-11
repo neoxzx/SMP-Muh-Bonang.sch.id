@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMP Muhammadiyah Bojong Nangka Tangerang | Unggul & Berkarakter</title>
+    <link rel="shortcut icon" href="SMP Bonang.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .bg-muhammadiyah { background-color: #006837; }
+        .text-muhammadiyah { color: #006837; }
+        .hero-gradient { background: linear-gradient(rgba(0,104,55,0.8), rgba(0,104,55,0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; }
+        
+        /* Dropdown Styling */
+        .dropdown:hover .dropdown-menu { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Top Bar -->
+    <div class="bg-yellow-500 text-white text-sm py-2 px-4 hidden md:block">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <i class="fas fa-clock mr-2"></i> Buka Senin - Jumat, 07.00 - 15.00 WIB
+            </div>
+            <div class="flex space-x-4">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/smpmuhammadiyah.bonang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fas fa-phone mr-2"></i> (021) 54203469</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <img src="SMP Bonang.png" alt="Logo" class="h-12">
+                <div>
+                    <h1 class="font-bold text-lg leading-tight text-muhammadiyah uppercase">SMP Muhammadiyah</h1>
+                    <p class="text-xs font-semibold">Bojong Nangka Tangerang</p>
+                </div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 font-medium">
+
+                
+                <!-- Dropdown Profil -->
+                <div class="relative dropdown">
+                    <button class="flex items-center hover:text-muhammadiyah transition focus:outline-none">
+                        Profil <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="dropdown-menu absolute left-0 mt-0 w-48 bg-white shadow-xl rounded-b-lg border-t-4 border-muhammadiyah hidden">
+                        <a href="#profil" class="block px-4 py-3 text-sm hover:bg-gray-100 transition">Sejarah Singkat</a>
+                        <a href="#" class="block px-4 py-3 text-sm hover:bg-gray-100 transition">Visi & Misi</a>
+                        <a href="#" class="block px-4 py-3 text-sm hover:bg-gray-100 transition">Sara Prasarana</a>
+                        <a href="#" class="block px-4 py-3 text-sm hover:bg-gray-100 transition">IPM</a>
+                    </div>
+                </div>
+
+                <a href="berita.html" class="hover:text-muhammadiyah">Berita</a>
+                <a href="ekstrakurikuler.html" class="hover:text-muhammadiyah">Ekstrakurikuler</a>
+                <a href="gallery.html" class="hover:text-muhammadiyah">Gallery</a>
+                <a href="#kontak" class="hover:text-muhammadiyah">Kontak</a>
+                <a href="ppdb.html" class="bg-red-600 text-white px-5 py-2 rounded-full font-bold hover:bg-red-700 transition shadow-lg">SPMB</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-2xl text-muhammadiyah">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3 shadow-lg">
+            <a href="#beranda" class="block font-medium py-2">Beranda</a>
+            <div class="border-b border-gray-100 pb-2">
+                <p class="text-gray-400 text-xs uppercase font-bold mb-2">Profil Sekolah</p>
+                <a href="#profil" class="block pl-4 py-2 text-sm">Sambutan</a>
+                <a href="#" class="block pl-4 py-2 text-sm">Visi & Misi</a>
+            </div>
+            <div class="border-b border-gray-100 pb-2">
+                <p class="text-gray-400 text-xs uppercase font-bold mb-2">Akademik</p>
+                <a href="#" class="block pl-4 py-2 text-sm">Kurikulum</a>
+                <a href="#" class="block pl-4 py-2 text-sm">Ekstrakurikuler</a>
+            </div>
+            <a href="gallery.html" class="block font-medium py-2">Gallery</a>
+            <a href="#kontak" class="block font-medium py-2">Kontak</a>
+            <a href="#ppdb" class="block bg-red-600 text-white text-center py-3 rounded-lg font-bold">Daftar SPMB</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-gradient h-[500px] flex items-center text-white text-center px-4">
+        <div class="container mx-auto">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4">Membentuk Generasi Qurani & Berwawasan Global</h2>
+            <p class="text-xl mb-8 opacity-90">Selamat Datang di SMP Muhammadiyah Bojong Nangka Tangerang</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#ppdb" class="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 rounded-full font-bold transition shadow-lg">Daftar PPDB Sekarang</a>
+                <a href="#profil" class="bg-white text-muhammadiyah hover:bg-gray-100 px-8 py-3 rounded-full font-bold transition shadow-lg">Profil Sekolah</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian lainnya tetap sama (Profil, PPDB, Kontak, Footer) -->
+    <!-- ... (Copy dari kode lama Anda) ... -->
+
+    <!-- Profil Singkat -->
+    <section id="profil" class="py-16 container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <img src="kepsek.jpg" alt="Gedung Sekolah" class="rounded-lg shadow-xl">
+            </div>
+            <div>
+                <h3 class="text-3xl font-bold text-muhammadiyah mb-4">Sambutan Kepala Sekolah</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    "Assalamu'alaikum Wr. Wb. Kami berkomitmen untuk menyelenggarakan pendidikan tingkat menengah pertama yang mengintegrasikan nilai-nilai Islam berkemajuan dengan kurikulum nasional demi mencetak lulusan yang berakhlak mulia dan cerdas."
+                </p>
+                <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-700">
+                    <h4 class="font-bold text-muhammadiyah mb-2 italic text-lg">Visi Kami:</h4>
+                    <p>"Terwujudnya sekolah yang unggul dalam prestasi, anggun dalam moral, dan berdasarkan nilai-nilai Al-Islam dan Kemuhammadiyahan."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Kontak & Lokasi -->
+    <section id="kontak" class="py-16 container mx-auto px-4">
+        <h3 class="text-3xl font-bold text-center mb-12">Kontak & Lokasi</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                    <div class="bg-green-100 p-3 rounded-full text-muhammadiyah"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <h5 class="font-bold">Alamat Lengkap</h5>
+                        <p class="text-gray-600 text-sm">Jalan Dasana Indah Blok SG 12 No. 12, Kelapa Dua, Bojong Nangka, Tangerang, Banten 15810</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="bg-green-100 p-3 rounded-full text-muhammadiyah"><i class="fas fa-phone-alt"></i></div>
+                    <div>
+                        <h5 class="font-bold">Telepon</h5>
+                        <p class="text-gray-600 text-sm">(021) 54203469</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="bg-green-100 p-3 rounded-full text-muhammadiyah"><i class="fas fa-code"></i></div>
+                    <div>
+                        <h5 class="font-bold">Plus Code (Google Maps)</h5>
+                        <p class="text-gray-600 text-sm">PHRW+WR Bojong Nangka, Kabupaten Tangerang</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Google Maps Embed Placeholder -->
+            <div class="rounded-xl overflow-hidden shadow-md h-64 bg-gray-200">
+                <iframe src="https://www.google.com/maps/embed/v1/place?q=SMP%20Muhammadiyah%20Bojong%20Nangka%20Tangerang&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="container mx-auto grid md:grid-cols-4 gap-8">
+            <div class="col-span-2">
+                <h4 class="font-bold text-xl mb-4">SMP Muhammadiyah Bojong Nangka</h4>
+                <p class="text-gray-400 text-sm w-3/4">Pendidikan yang berfokus pada kualitas akademik dan pembentukan karakter islami sesuai dengan cita-cita KH Ahmad Dahlan.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Navigasi</h4>
+                <ul class="text-gray-400 text-sm space-y-2">
+                    <li><a href="#profil" class="hover:text-white">Sejarah</a></li>
+                    <li><a href="#akademik" class="hover:text-white">Ekstrakurikuler</a></li>
+                    <li><a href="#ppdb" class="hover:text-white">Info PPDB</a></li>
+                    <li><a href="#" class="hover:text-white">Berita Sekolah</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Media Sosial</h4>
+                <div class="flex space-x-4 text-xl">
+                    <a href="https://www.instagram.com/smpmuhammadiyah.bonang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-blue-500"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover:text-red-500"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2026 SMP Muhammadiyah Bojong Nangka Tangerang. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/qr/2DHFSPFV3GCLO1" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition z-50">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+
+
+    <!-- Script untuk Toggle Mobile Menu -->
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Menutup menu jika link diklik (opsional)
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>

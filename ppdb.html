@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPMB 2026/2027 | SMP Muhammadiyah Bojong Nangka</title>
+    <link rel="shortcut icon" href="SMP Bonang.png" type="image/x-icon">
+    
+    <!-- Framework & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --muhammadiyah-green: #006837;
+            --muhammadiyah-yellow: #f1c40f;
+            --soft-green: #f0fdf4;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Styles for PPDB Section */
+        .ppdb-header {
+            background: linear-gradient(rgba(0,104,55,0.9), rgba(0,104,55,0.9)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .ppdb-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .ppdb-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: var(--muhammadiyah-green);
+        }
+
+        .card-highlight {
+            background: var(--muhammadiyah-green);
+            color: white;
+            border: none;
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .card-highlight {
+                transform: scale(1);
+            }
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--muhammadiyah-yellow);
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 800;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .btn-whatsapp {
+            background: var(--muhammadiyah-yellow);
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background: #e1b100;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(241, 196, 15, 0.4);
+        }
+
+        .floating-blob {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 104, 55, 0.05);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Header / Navbar Minimalis -->
+    <nav class="bg-white py-4 px-6 shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="SMP Bonang.png" alt="Logo" class="h-10">
+                <span class="font-bold text-gray-800 hidden md:block">SMP Muhammadiyah Bojong Nangka</span>
+            </a>
+            <a href="index.html" class="text-sm font-semibold text-muhammadiyah hover:underline">
+                <i class="fas fa-arrow-left mr-2"></i> Kembali ke Beranda
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero PPDB -->
+    <header class="ppdb-header py-20 px-4 text-center text-white">
+        <div class="container mx-auto">
+            <span class="bg-yellow-500 text-black px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block">Admission Open</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6">Penerimaan Peserta Didik Baru</h1>
+            <p class="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
+                Bergabunglah bersama kami untuk mencetak generasi yang unggul dalam prestasi dan anggun dalam moral Islami.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-20 bg-gray-50 relative">
+        <div class="floating-blob top-0 left-0"></div>
+        <div class="floating-blob bottom-0 right-0"></div>
+
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Card 1: Persyaratan -->
+                <div class="ppdb-card p-10 flex flex-col">
+                    <div class="mb-6 text-green-700">
+                        <i class="fas fa-file-signature text-5xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Syarat Pendaftaran</h3>
+                    <ul class="space-y-4 text-gray-600 flex-grow">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>Fotokopi Akta Kelahiran (2 Lembar)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>Fotokopi Kartu Keluarga (2 Lembar)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>Fotokopi Ijazah SD/MI Legalisir</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>Pas Foto Berwarna 3x4 (4 Lembar)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Jadwal (Highlight) -->
+                <div class="ppdb-card card-highlight p-10 flex flex-col shadow-2xl">
+                    <div class="mb-6 text-yellow-400">
+                        <i class="fas fa-calendar-check text-5xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Jadwal Gelombang</h3>
+                    <p class="text-yellow-200 text-sm mb-6 uppercase tracking-wider font-semibold">Tahun Ajaran 2026/2027</p>
+                    
+                    <div class="bg-white/10 rounded-xl p-6 mb-8 border border-white/20">
+                        <p class="text-sm opacity-80 mb-1">Gelombang 1</p>
+                        <p class="text-xl font-bold">Januari - Maret 2026</p>
+                        <hr class="my-4 border-white/20">
+                        <p class="text-sm opacity-80 mb-1">Gelombang 2</p>
+                        <p class="text-xl font-bold">April - Juni 2026</p>
+                    </div>
+
+                    <div class="mt-auto">
+                        <p class="text-yellow-300 font-bold italic mb-6">"Dapatkan diskon biaya pendaftaran khusus pendaftar di Gelombang 1!"</p>
+                        <a href="https://wa.me/qr/2DHFSPFV3GCLO1" target="_blank" class="btn-whatsapp w-full py-4 rounded-xl text-black font-extrabold flex items-center justify-center space-x-2">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            <span>Daftar Lewat WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Alur Pendaftaran -->
+                <div class="ppdb-card p-10 flex flex-col">
+                    <div class="mb-6 text-green-700">
+                        <i class="fas fa-project-diagram text-5xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Alur Pendaftaran</h3>
+                    <div class="space-y-6 flex-grow">
+                        <div class="flex items-center">
+                            <div class="step-number">1</div>
+                            <p class="text-gray-700 font-medium">Pengisian Formulir Online/Offline</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="step-number">2</div>
+                            <p class="text-gray-700 font-medium">Tes Observasi Siswa</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="step-number">3</div>
+                            <p class="text-gray-700 font-medium">Wawancara Orang Tua</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="step-number">4</div>
+                            <p class="text-gray-700 font-medium">Daftar Ulang & Atribut</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Section PPDB -->
+            <div class="mt-20 text-center">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 inline-block max-w-2xl">
+                    <h4 class="font-bold text-gray-800 mb-2">Punya pertanyaan lebih lanjut?</h4>
+                    <p class="text-gray-500 mb-6">Tim admin kami siap membantu Anda memberikan informasi detail mengenai program beasiswa dan rincian biaya.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <div class="flex items-center text-muhammadiyah font-bold">
+                            <i class="fas fa-phone-alt mr-2"></i> (021) 54203469
+                        </div>
+                        <div class="flex items-center text-muhammadiyah font-bold">
+                            <i class="fas fa-envelope mr-2"></i> info@smpmbonang.sch.id
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Copyright -->
+    <footer class="bg-white py-8 border-t border-gray-100 text-center">
+        <p class="text-gray-400 text-sm">
+            &copy; 2026 SMP Muhammadiyah Bojong Nangka Tangerang. <br class="md:hidden"> Panitia PPDB Online.
+        </p>
+    </footer>
+
+</body>
+</html>

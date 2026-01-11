@@ -1,0 +1,389 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+    background: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.school-name {
+    font-weight: 700;
+    color: #006837;
+    font-size: 1.1rem;
+}
+
+.branch-name {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #006837;
+}
+
+.btn-ppdb {
+    background: #ffcc00;
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: #000 !important;
+    font-weight: bold !important;
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(rgba(0,104,55,0.9), rgba(0,104,55,0.9)), url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Sections */
+.academic-section {
+    padding: 60px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #006837;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.center { text-align: center; }
+
+.feature-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.feature-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-list i {
+    color: #006837;
+}
+
+.image-box img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Cards */
+.academic-grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    border-bottom: 4px solid #006837;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card .icon {
+    font-size: 2.5rem;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+/* Ekskul Grid */
+.ekskul-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.ekskul-item {
+    background: #006837;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.ekskul-item i {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+/* Floating WA */
+.floating-wa {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-decoration: none;
+    z-index: 1000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid, .ekskul-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-links {
+        display: none; /* Sederhananya disembunyikan di mobile tanpa JS */
+    }
+}
+
+
+/* Galeri Styles */
+.gallery-container {
+    padding: 50px 0;
+}
+
+.gallery-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    border: 2px solid #006837;
+    background: transparent;
+    color: #006837;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: #006837;
+    color: white;
+}
+
+/* Grid System: Kunci untuk mengatur jumlah foto bebas */
+.photo-grid {
+    display: grid;
+    /* Ini akan membuat kolom otomatis minimal 300px, 
+       jika layar lebar akan jadi 3-4 kolom, jika sempit jadi 1 kolom */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Agar foto tidak gepeng */
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Efek zoom saat kursor di atas foto */
+}
+
+/* Overlay teks saat hover */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay span {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+    .photo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+}
+
+
+
+/* Ekstrakurikuler Detailed Styles */
+.ekscul-page {
+    padding: 60px 0;
+}
+
+.intro-text {
+    margin-bottom: 50px;
+}
+
+.ekscul-grid-detailed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.ekscul-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.ekscul-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: #006837;
+}
+
+.ekscul-icon-box {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 30px;
+    color: white;
+}
+
+.ekscul-card h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.ekscul-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Custom Colors for Icons */
+.hw-bg { background: #1a5e20; } /* Hijau HW */
+.ts-bg { background: #b71c1c; } /* Merah Tapak Suci */
+.math-bg { background: #01579b; }
+.english-bg { background: #e65100; }
+.sports-bg { background: #2e7d32; }
+.it-bg { background: #263238; }
+.female-bg { background: #ad1457; }
+.quran-bg { background: #00695c; }
+
+
+
